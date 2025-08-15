@@ -2,35 +2,38 @@
  * @name Happy Exceed Animated Background (Blurred)
  * @description Animated GIF background (looping) with a soft blur, CSS-only for Vencord.
  * @author AnnantTomar
- * @version 1.1
+ * @version 1.2
  * @source https://github.com/annanttomar/my-custom-vencord-theme
  */
 
-/* Store background separately for easy reference */
+/* Background image variable */
 :root {
   --anime-bg: url("https://media.tenor.com/2IpwghlBsqwAAAAC/happy-exceed.gif");
 }
 
-/* Make Discord UI transparent to reveal our background */
+/* Make all backgrounds transparent so ours shows */
 .theme-dark, .theme-light,
-[class^="bg-"], [class^="app-"], [class^="layers-"] {
+#app-mount, .app-2CXKsg, .appMount-2yBXZl, .appMount-3VJmYg {
   background: transparent !important;
   background-image: none !important;
 }
 
-/* Add a fixed, blurred background behind everything */
-[class^="appMount-"]::before {
+/* Add blurred background behind everything */
+#app-mount::before {
   content: "";
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: var(--anime-bg) center/cover no-repeat fixed;
   filter: blur(6px);
-  transform: scale(1.05); /* reduces halo effect from blur edges */
+  transform: scale(1.05);
   pointer-events: none;
   z-index: -1;
 }
 
-/* Fallback solid color for areas behind the GIF */
+/* Fallback solid color */
 html, body {
   background: #000 !important;
 }
