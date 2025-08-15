@@ -1,0 +1,16 @@
+/**
+ * @name Happy Exceed Animated Background (Blurred)
+ * @description Animated GIF background with a blur effect for Vencord.
+ * @author AnnantTomar
+ * @version 1.0
+ * @source https://github.com/annanttomar/my-custom-vencord-theme
+ */
+
+.appMount-3lHmkl {
+    background: url("https://media.tenor.com/2IpwghlBsqwAAAAC/happy-exceed.gif") center/cover no-repeat fixed !important;
+    filter: blur(5px);
+}
+
+.theme-dark, .theme-light {
+    background-color: transparent !important;
+}
